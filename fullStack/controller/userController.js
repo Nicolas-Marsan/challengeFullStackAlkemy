@@ -51,19 +51,22 @@ let userController = {
                 let passIsOk = bcryptjs.compareSync(req.body.password, userToLogin.password);            
                 
                 if(passIsOk) {
-                delete userToLogin.password;
+                //delete userToLogin.password;
                 
                 req.session.userLogged = userToLogin; 
                                 
-                res.send(req.session);
+                return res.send(req.session);
               }
-            }
+            }else{
+              //req.session.userLogged = undefined;
+              res.send(req.session)}
           })
     },
    
    logout: function(req, res){
      req.session.destroy();
     
+     return res.send("true");
 }
 
     
