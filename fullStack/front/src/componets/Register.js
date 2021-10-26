@@ -32,21 +32,21 @@ function Register(props){
         <div className ='bodyNota'>
             
             <div className="crear">
-                          <Link to="/"><button>Back </button></Link>
+                          <Link to="/"><button>Volver </button></Link>
             </div>
-            <p className="incoming">Register</p>
+            <p className="incoming">Registrarse</p>
         <div className="notaInicia2" >
             <form className="formInicia" onSubmit={(e)=> submit(e)}>              
-              <label htmlFor="firstName">First Name:</label>
+              <label htmlFor="firstName">Nombre:</label>
               <input  ref={firstName} type="text" name="firstName" id="firstName"></input>
-              <label htmlFor="lastName">Last Name:</label>
+              <label htmlFor="lastName">Apellido:</label>
               <input ref={lastName}  type="text" name="lastName" id="lastName"></input>
               <label htmlFor="mail">Mail:</label>
               <input ref={mail}  type="text" name="mail" id="mail"></input>
               <label htmlFor="password">Password:</label>
               <input ref={password}  type="password" name="password" id="password"></input>         
               
-              <button className="primero">Submit</button>
+              <button className="primero">Enviar</button>
           </form>
         </div>
         </div>

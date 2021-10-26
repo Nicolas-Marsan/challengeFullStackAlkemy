@@ -17,6 +17,7 @@ function Profile(){
     const [ingreso,setIngreso] = useState(0);
     const [saldo,setSaldo] = useState(0);
     const [reenvia,setReenvia] = useState(false);
+    const [isComplete, setIsComplete] = useState(false)
     const moveId = useRef();
     
 
@@ -29,6 +30,7 @@ function Profile(){
             const data= await res.json()            
                 setMoves(data);      
                 setIsLoading(false);  
+                
         }        
 
   useEffect(() => {
@@ -49,7 +51,9 @@ function Profile(){
     setEgreso(egresosTotal);
     saldo=(ingresosTotal-egresosTotal);
     setSaldo(saldo);
+    setIsComplete(true)
     }
+    
 }, [moves]);
 
  function rescue(e){
@@ -62,35 +66,36 @@ function Profile(){
       console.log(egreso)  
     return(
         <>{reenvia ? <Redirect to='./modifica'/>:
-        <div className="bodyProfile">
+        <>{moves.movements && <div className="bodyProfile">
             <div className="navProfile">
             
             <div className="crear">
-                          <Link to="/NewMovement"><button>Create new movement</button></Link>
+                          <Link to="/NewMovement"><button>Crear nuevo movimiento</button></Link>
             </div>
             <div className="crear">
-                          <Link to="/ForEntry"><button>Incoming movements </button></Link>
+                          <Link to="/ForEntry"><button>Movimientos por ingresos </button></Link>
             </div>
             <div className="crear">
-                          <Link to="/ForEgress"><button>Movements by egress</button></Link>
+                          <Link to="/ForEgress"><button>Movimientos por egresos</button></Link>
             </div>
             </div>
-            <p className="client">Customer:{name} </p>  
-            <p className="balance">Balance:{saldo}</p>      
+            <p className="client">Cliente:{name} </p>  
+            <p className="balance">Saldo:{saldo}</p>      
 
 
             <table className="table">
                         <thead>
                             <tr className="list">
-                                <th>Concept</th>
-                                <th>Amount</th>
-                                <th>Date</th>
-                                <th>Type</th>
+                                <th>Concepto</th>
+                                <th>Monto</th>
+                                <th>Fecha</th>
+                                <th>Tipo</th>
+                                <th>Accion</th>
                             </tr>
                         </thead>
                         <tbody >
                             {
-                            moves.movements && moves.movements.map(record => {
+                            isComplete && moves.movements.map(record => {
                                 return <div className="list"> <PropsMoves
                                 concept= {record.concept}
                                 amount = {record.amount}
@@ -99,7 +104,7 @@ function Profile(){
 
                                 key={record.id}
                                 />
-                                <button className="buttonEdit" id={record.id} onClick={(e)=> rescue(e)}>Delete/edit</button>
+                                <button className="buttonEdit" id={record.id} onClick={(e)=> rescue(e)}>Borrar/editar</button>
                                 </div>
                             })
             
@@ -115,6 +120,8 @@ function Profile(){
             
             
         </div>
+         }
+         </>
         }
          </>
     )

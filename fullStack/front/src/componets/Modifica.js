@@ -89,17 +89,17 @@ function Modifica(props){
         <>{isComplete ? < Redirect to='/profile'/>:
         <div className ='bodyNota'>
             <div className="crear">
-                          <Link to="/Profile"><button>Back </button></Link>
+                          <Link to="/Profile"><button>Volver </button></Link>
             </div>
         <div className="notaInicia" >
             { old && <form className="formInicia" onSubmit={(e)=> submit(e)}>              
-              <label htmlFor="concept">Concept:</label>
+              <label htmlFor="concept">Concepto:</label>
               <input  ref={concept} type="text" name="concept" id="concept" placeholder={oldConcept}></input>
-              <label htmlFor="amount">Amount:</label>
+              <label htmlFor="amount">Monto:</label>
               <input ref={amount}  type="text" name="amount" id="amount" placeholder={oldAmount}></input>  
               <div className="subdel">         
-                <button className="primero">Submit</button>
-                 <button className="segundo" onClick={(e)=> submit2(e)}>Delete</button>
+                <button className="primero">Enviar</button>
+                 <button className="segundo" onClick={(e)=> submit2(e)}>Borrar</button>
               </div>  
           </form>}
         </div>

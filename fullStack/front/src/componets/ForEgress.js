@@ -45,18 +45,18 @@ function ForEgress(){
             <div className="navProfile">
             
             <div className="crear">
-                          <Link to="/profile"><button>Back</button></Link>
+                          <Link to="/profile"><button>Volver</button></Link>
             </div>
-            <p className="incoming">Movements by egress</p>
+            <p className="incoming">Movimientos por egresos</p>
             </div>
             
             <table className="table">
                         <thead>
                             <tr className="list">
-                                <th>Concept</th>
-                                <th>Amount</th>
-                                <th>Date</th>
-                                <th>Type</th>
+                                <th>Concepto</th>
+                                <th>Monto</th>
+                                <th>Fecha</th>
+                                <th>Tipo</th>
                             </tr>
                         </thead>
                         <tbody >

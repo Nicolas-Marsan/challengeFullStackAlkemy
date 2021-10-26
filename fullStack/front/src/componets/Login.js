@@ -47,16 +47,16 @@ function Login(props){
         <div className ='bodyNota'>
             
             <div className="crear">
-                          <Link to="/"><button>Back </button></Link>
+                          <Link to="/"><button>Volver </button></Link>
             </div>
-            <p className="incoming">Login</p> 
+            <p className="incoming">Ingresar</p> 
         <div className="notaInicia" >
             <form className="formInicia" onSubmit={(e)=> submit(e)}>              
               <label htmlFor="mail">Mail:</label>
               <input  ref={mail} type="text" name="mail" id="mail"></input>
               <label htmlFor="password">Password:</label>
               <input ref={pass}  type="password" name="password" id="password"></input>
-              <button className="primero">Submit</button>
+              <button className="primero">Enviar</button>
           </form>
         </div>
         </div>

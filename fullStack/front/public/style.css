@@ -2,549 +2,798 @@
 madera claro D5FEAB
 
 */
+@media (min-width: 0px){
 *{
-    margin: 0px;
-  }
-  body {
-    margin: 0px;
-    font-family: 'Gluten', cursive;
-  }
-  
-  .encabezado{
-    display: flex;
-    background-color:white;
-    
-  }
-  
-  .menu{
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  .encabezado .logo{
-    width: 40%;
-  
-  }
-  
-  .encabezado .menu{
-  width: 90%;
-  margin: auto;
-  
-  }
-  
-  main{
-    margin-bottom: 0px;
-    width: 100%;
-  }
-  .titulo{
+  margin: 0px;
+}
+body {
+  margin: 0px;
+  font-family: 'Gluten', cursive;
+}
 
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 45px;
-    margin-top: 15px;
-    
-  }
+.encabezado{
+  display: flex;
+  background-color:lightgray;
   
-  .contactanos button, .sobre button, .crear button, .iniciar button{
-    padding: 10px;
-    background-color:lightgrey;
-    border-radius: 5px;
-    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.5);    
-    font-size: 20px;
-    font-weight:500;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-top: 20px;
-    
-  }
-  
-  .contactanos button:hover, .sobre button:hover, .crear button:hover, .iniciar button:hover{
-  
-   
-    background-color: gray;
-  }
-  
-  .barra{
-    background-color: #D5FEAB;
-    height: 20px;
-  }
-  
-  .cuerpo{
-    background: url("finanzas.jpg");
-    background-size: cover;
-    border: 1px solid black;
-    width: 100%;
-    height: 600px;
-    display: flex;
-    justify-content: space-around;
-    
-  }
-  .bodyProfile{
-    background: url("finanzas.jpg");
-    background-size: cover;
-    width: 100%;
-    height: 720px;
-  }
-  .list{
-    display: flex;
-    margin: auto;
-  }
-  .list th, .list td{
+}
 
-    border: 1px solid black;
-    height: 30px;
-    width: 200px;
-    text-align: center;
-  }
- .incoming{
-  
-  margin: auto;
+.menu{
+  display: flex;
+  justify-content: space-around;
+}
+
+.encabezado .logo{
+  width: 40%;
+
+}
+
+.encabezado .menu{
+width: 90%;
+margin: auto;
+
+}
+
+
+.titulo{
+
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 39px;
-  font-weight: bold;
-  text-align: center;
- }
-  .list th{
+  font-size:25px;
+  margin-top: 15px;
+  
+  width: 50%;
+  
+}
 
+.contactanos button, .sobre button, .crear button, .iniciar button{
+  padding: 5px;
+  background-color:lightgrey;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.5);    
+  font-size: 15px;
+  font-weight:500;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  
+  
+}
+
+.contactanos button:hover, .sobre button:hover, .crear button:hover, .iniciar button:hover{
+
+ 
+  background-color: gray;
+}
+
+
+
+.cuerpo{
+  background: url("finanzas.jpg");
+  background-size: cover;
+  border: 1px solid black;
+  width: 100%;
+  height: 600px;
+  display: flex;
+  justify-content: space-around;
+  
+}
+.bodyProfile{
+  background: url("finanzas.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 720px;
+}
+.list{
+  display: flex;
+  margin: auto;
+}
+.list th, .list td{
+
+  border: 1px solid black;
+  height: 15px;
+  width: 70px;
+  text-align: center;
+  font-size: 10px;
+}
+.incoming{
+
+margin: auto;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 39px;
+font-weight: bold;
+text-align: center;
+}
+.list th{
+
+  background-color: grey;
+}
+
+.list td{
+
+  background-color: lightgrey;
+}
+.buttonEdit{
+  background-color: lightseagreen;
+  font-weight: bold;
+  border: 1px solid black;
+  height: 19px;
+  width: 74px;
+  font-size: 10px;
+  text-align: center;
+}
+.client, .balance{
+  margin: auto;
+  width: 40%;  
+  margin-top: 30px;
+  font-size: 17px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif
+
+}
+
+.table{
+  margin: auto;
+  margin-top: 30px;
+}
+
+
+.navProfile{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.nota{
+width: 600px;
+height: 400px;
+border: black 2px solid;
+background-color: #D5FEAB;
+border-radius: 15px;
+margin-top: 90px;
+box-shadow: 15px 15px 15px 15px rgba(0, 0, 0, 0.8);
+
+}
+
+.notaInicia{
+  width: 300px;
+  height: 280px;
+  border: black 2px solid;
+  background-color: lightgray;
+  border-radius: 15px;   
+  position: absolute;
+  top:25%;
+  left: 15%;
+  box-shadow: 15px 15px 15px 15px rgba(0, 0, 0, 0.8);    
+  }
+
+  .notaInicia2{
+  width: 300px;
+  height: 380px;
+  border: black 2px solid;
+  background-color: lightgray;
+  border-radius: 15px;   
+  position: absolute;
+  top:25%;
+  left: 15%;
+  box-shadow: 15px 15px 15px 15px rgba(0, 0, 0, 0.8);  
+
+
+  }
+
+  .subdel{
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    
+
+  }
+
+  .primero{
+    
+    margin-top: 35px;
+    padding: 10px;
+    background-color: green;
+  }
+  .segundo{
+    
+    margin-top: 35px;
+    padding: 10px;
+    background-color: red;
+  }
+
+
+  .bodyNota{
+    background: url("finanzas.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 720px;
+
+  }
+  .divSelect{
+    display: flex;
+    margin-top: 8px;
+    margin-bottom: 15px;
+  }
+  .divSelect select{
     background-color: grey;
   }
+  .buttonSubmit{
 
-  .list td{
-
-    background-color: lightgrey;
-  }
-  .buttonEdit{
-    background-color: lightseagreen;
+    padding:5px;
+    background-color: green;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
     font-weight: bold;
+    margin-top: 1px;
   }
-  .client, .balance{
-    margin: auto;
-    width: 20%;
-    text-align: center;
-    margin-top: 35px;
-    font-size: 30px;
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif
 
-  }
-  .table{
-    margin: auto;
-    margin-top: 30px;
-  }
-  
-
-  .navProfile{
-    display: flex;
-    justify-content: space-between;
-    margin-left: 30px;
-    margin-right: 30px;
-  }
-  
-  .nota{
-  width: 600px;
-  height: 400px;
-  border: black 2px solid;
-  background-color: #D5FEAB;
-  border-radius: 15px;
-  margin-top: 90px;
-  box-shadow: 15px 15px 15px 15px rgba(0, 0, 0, 0.8);
-  
-  }
-  
-  .notaInicia{
-    width: 600px;
-    height: 280px;
-    border: black 2px solid;
-    background-color: lightgray;
-    border-radius: 15px;   
-    position: absolute;
-    top:25%;
-    left: 30%;
-    box-shadow: 15px 15px 15px 15px rgba(0, 0, 0, 0.8);    
-    }
-
-    .notaInicia2{
-    width: 600px;
-    height: 380px;
-    border: black 2px solid;
-    background-color: lightgray;
-    border-radius: 15px;   
-    position: absolute;
-    top:25%;
-    left: 30%;
-    box-shadow: 15px 15px 15px 15px rgba(0, 0, 0, 0.8);  
-
-
-    }
-
-    .subdel{
-      display: flex;
-      width: 50%;
-      justify-content: space-between;
-      
-
-    }
-
-    .primero{
-      
-      margin-top: 35px;
-      padding: 10px;
-      background-color: green;
-    }
-    .segundo{
-      
-      margin-top: 35px;
-      padding: 10px;
-      background-color: red;
-    }
-
-
-    .bodyNota{
-      background: url("finanzas.jpg");
-    background-size: cover;
-    width: 100%;
-    height: 720px;
-  
-    }
-    .divSelect{
-      display: flex;
-      margin-top: 8px;
-      margin-bottom: 15px;
-    }
-    .divSelect select{
-      background-color: grey;
-    }
-    .buttonSubmit{
-
-      padding:5px;
-      background-color: green;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 15px;
-      font-weight: bold;
-      margin-top: 1px;
-    }
-
-    .formInicia{
-      
-      display: flex;
-      flex-direction: column;
-      align-items:center;
-      padding-top: 10px;
-      margin-top: 15px;
-    }
-    .formInicia label{
-      margin-top: 5px;
-      font-weight: bold;
-    }
-
-    .formInicia input{
-      background-color: grey;
-      width: 50%;
-      height: 25px;
-    }
-  
-  .misNotas{
-  width: 300px;
-  height: 500px;
-  border: black 2px solid;
-  background-color: #D5FEAB;
-  border-radius: 15px;
-  margin-top: 50px;
-  box-shadow: 15px 15px 15px 15px rgba(0, 0, 0, 0.8);
-  }
-  
-  .cabezaNota{  
-    height: 60px;
-    background-color: #EED09D;
-    border-radius: 15px 15px 0px 0px ; 
-    display: flex;
-    justify-content: space-between; 
-  }
-  
-  .cabezaMis{
-    height: 60px;
-    background-color: #EED09D;
-    border-radius: 15px 15px 0px 0px ; 
-  }
-  
-  .cabezaMis p{
-    margin-top: 0px;
-    text-align: center;
-    font-size: 30px;
-    font-weight: bold;
-    padding-top: 20px;
-    
-    
-  }
-  
-  .inp{
-    width: 500px;
-    height: 300px;
-    border-radius: 10px;
-    margin-top: 20px;
-    margin-left: 50px;
-    background-color: #D5FEAB;
-    resize: none;
-    border: none;
-    outline: none;
-  }
-  
-  .fa-save{
-    margin-left: 15px;
-    margin-top: 10px;
-    color:blue;
-    font-size: 40px;
-  }
-  .fa-trash-alt{
-  
-    margin-right: 15px;
-    margin-top: 10px;
-    color:red;
-    font-size: 40px;
-  
-  }
-  .logo img{
-    margin-left: 5px;
-    width: 200px;
-    height: 120px;
-    padding-top: 5px;
-
-  }
-  
-  .boton_formulario{
-  
-    background-color:#EED09D;
-    border: none;
-    border-radius: 15px;
-  }
-  .fa-save:hover{
-  
-    font-size: 42px;
-    transition: all 0.2s ease;
-  }
-  
-  .fa-trash-alt:hover{
-  
-    font-size: 42px;
-    transition: all 0.2s ease;
-  }
-  
-  .footer{
-    margin-top: 0px;
-    background-color: #D5FEAB;
-    height: 30px;
-  }
-  
-  .footer p{
-    text-align: center;
-    padding-top: 10px;
-    width: 100%;
-  }
-  
-  .formUsuario{
+  .formInicia{
     
     display: flex;
     flex-direction: column;
-  
+    align-items:center;
+    padding-top: 10px;
+    margin-top: 15px;
   }
-  
-  .formUsuario .botonesCrearCuenta{
-    
-    margin-top: 30px;
-  
-  }
-  /*-------------------------SLIDER-------------------------------------------------*/
-  .container-slider{ 
-    width: 90%;
-    max-width: 900px;
-    margin: auto;
-    overflow: hidden;
-    /*box-shadow: 0 0 0 10px #faa;*/
-    position: relative;
-  }
-  .slider{
-    display: flex;
-    width: 500%;
-    height: 400px;
-    margin-left: -100%;
-  }
-  .slider__section{
-    width: 100%;
-  
-  }
-  .slider__img{
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .slider__btn{
-   position: absolute;
-   width: 40px;
-   height: 40px;
-   background: rgba(255,  255 , 255 , 0.7);
-   top: 50%;
-   transform: translateY(-50%);
-   font-size: 30px;
-   font-weight: bold;
-   font-family: monospace;
-   text-align: center;
-   border-radius: 50%;
-   cursor: pointer;
-  }
-  
-  .pause{
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    /*background: rgba(255,  255 , 255 , 0.7);*/
-    top: 102%;
-    transform: translateY(-100%);
-    font-size: 25px;
+  .formInicia label{
+    margin-top: 5px;
     font-weight: bold;
-    font-family: monospace;
-    text-align: center;
-    
-    cursor: pointer;
-    left: 450px;
-    
-    
-    
-  
   }
-  .play{
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    /*background: rgba(255,  255 , 255 , 0.7);*/
-    top: 98%;
-    transform: translateY(-100%);
-    font-size: 50px;
-    font-weight: bold;
-    font-family: monospace;
-    text-align: center;
-    
-    cursor: pointer;
-    right: 450px;
-  }
-  .slider__btn:hover{
-   background: #fff;
-  }
-  .slider__btn--left{
-   left: 10px;
-  }
-  .slider__btn--right{
-    right: 10px;
-  
-  }
-  /*-------------------------SLIDER-------------------------------------------------*/
-  .formUsuario .botonesCrearCuenta button{
-    
-    border-radius: 5px;
-    background-color: #EED09D;
-    padding: 15px;
-    font-family: 'Gluten', cursive;
-    font-size: 25px;
-  
-  }
-  
-  .formUsuario label{
-    margin-left: 98px;
-    margin-top: 25px;
-    font-size: 20px;
-  }
-  .contraOjo{
-    display: flex;
-    width: 408px;
-    margin-left: 98px;
-  
-  
-  }
-  .crear{
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  }
-  
-  @font-face{
-      font-family:biloxi;
-      src: url('Biloxi.ttf');
-  
-  }
-  
-  @font-face{
-    font-family:candara;
-    src: url('candara.ttf');
-  
-  }
-  
-  .dori{
-    background-color: #f3e6df;
-    font-family: biloxi;
-    font-size: 100px;
-    padding-left: 50px;
-  }
-  
-  .dori2{
-  
-    font-family: candara;
-    font-size: 30px;
-    padding-left: 50px;
-    background-color: #f3e6df;
-  }
-  
-  .carru{
-  
-    width: 200px;
-    height: 200px;
-    border: 1px solid black;
-  }
-  
-  
-  .contraOjo #contra{
-    width: 100%;
-    justify-content: center;
-    margin: auto;
-    border-right: none;
-    border-radius: 5px 0px 0px 5px;
-    outline: none;
-  
-  } 
-  .fa-eye-slash{
-    
-    border-radius: 0px 5px 5px 0px;
-    background-color: #EED09D;
-    
-    padding-top: 3px;
-    border: 2px solid black;
-    border-left: none;
-    width: 24px;
-    height: 24px;
-  }
-  
-  .formUsuario input{
-    width: 67%;
-    margin: auto;
+
+  .formInicia input{
+    background-color: grey;
+    width: 80%;
     height: 25px;
-    border-radius: 5px;
-    background-color: #EED09D;
-    margin-top: 1px;
+  }  
+
+.logo{
+  display: none;
+  margin-left: 5px;
+  width: 200px;
+  height: 120px;
+  padding-top: 5px;
+
+}  
+.boton_formulario{
+
+  background-color:#EED09D;
+  border: none;
+  border-radius: 15px;
+}  
+
+.botonesCrearCuenta{
+  display: flex;
+  justify-content: space-around;
+}
+
+}
+
+
   
-  }
-  
-  .botonesCrearCuenta{
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  @media (max-width: 1000px){
-  
-    .contactanos button, .sobre button, .crear button, .iniciar button{
-      padding: 5px;
-      font-size: 13px;
+  @media (min-width: 600px){
+    *{
+      margin: 0px;
+    }
+    body {
+      margin: 0px;
+      font-family: 'Gluten', cursive;
+    }
+    
+    .encabezado{
+      display: flex;
+      background-color:white;
       
     }
-  
+    
+    .menu{
+      display: flex;
+      justify-content: space-around;
+    }
+    
+    .encabezado .logo{
+      width: 40%;
+    
+    }
+    
     .encabezado .menu{
-      width: 45%;
-      margin: auto;
+    width: 90%;
+    margin: auto;
+    
+    }
+    
+    
+    .titulo{
+  
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 45px;
+      margin-top: 15px;
       
+    }
+    
+    .contactanos button, .sobre button, .crear button, .iniciar button{
+      padding: 10px;
+      background-color:lightgrey;
+      border-radius: 5px;
+      box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.5);    
+      font-size: 20px;
+      font-weight:500;
+      font-family: Arial, Helvetica, sans-serif;
+      margin-top: 20px;
+      
+    }
+    
+    .contactanos button:hover, .sobre button:hover, .crear button:hover, .iniciar button:hover{
+    
+     
+      background-color: gray;
+    }
+    
+    
+    
+    .cuerpo{
+      background: url("finanzas.jpg");
+      background-size: cover;
+      border: 1px solid black;
+      width: 100%;
+      height: 600px;
+      display: flex;
+      justify-content: space-around;
+      
+    }
+    .bodyProfile{
+      background: url("finanzas.jpg");
+      background-size: cover;
+      width: 100%;
+      height: 720px;
+    }
+    .list{
+      display: flex;
+      margin: auto;
+    }
+    .list th, .list td{
+      font-size: 15px;
+      border: 1px solid black;
+      height: 20px;
+      width: 120px;
+      text-align: center;
+    }
+   .incoming{
+    
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 39px;
+    font-weight: bold;
+    text-align: center;
+   }
+    .list th{
+  
+      background-color: grey;
+    }
+  
+    .list td{
+  
+      background-color: lightgrey;
+    }
+    .buttonEdit{
+      background-color: lightseagreen;
+      font-weight: bold;
+      border: 1px solid black;
+      height: 24px;
+      width: 125px;
+      font-size: 15px;
+      text-align: center;
+    }
+    .client, .balance{
+      margin: auto;
+      width: 20%;
+      text-align: center;
+      margin-top: 35px;
+      font-size: 30px;
+      font-weight: bold;
+      font-family: Arial, Helvetica, sans-serif
+  
+    }
+    .table{
+      margin: auto;
+      margin-top: 30px;
+    }
+    
+  
+    .navProfile{
+      display: flex;
+      justify-content: space-between;
+      margin-left: 30px;
+      margin-right: 30px;
+    }
+    
+    .nota{
+    width: 600px;
+    height: 400px;
+    border: black 2px solid;
+    background-color: #D5FEAB;
+    border-radius: 15px;
+    margin-top: 90px;
+    box-shadow: 15px 15px 15px 15px rgba(0, 0, 0, 0.8);
+    
+    }
+    
+    .notaInicia{
+      width: 400px;
+      height: 280px;
+      border: black 2px solid;
+      background-color: lightgray;
+      border-radius: 15px;   
+      position: absolute;
+      top:25%;
+      left: 30%;
+      box-shadow: 15px 15px 15px 15px rgba(0, 0, 0, 0.8);    
       }
+  
+      .notaInicia2{
+      width: 400px;
+      height: 380px;
+      border: black 2px solid;
+      background-color: lightgray;
+      border-radius: 15px;   
+      position: absolute;
+      top:25%;
+      left: 20%;
+      box-shadow: 15px 15px 15px 15px rgba(0, 0, 0, 0.8);  
+  
+  
+      }
+  
+      .subdel{
+        display: flex;
+        width: 50%;
+        justify-content: space-between;
+        
+  
+      }
+  
+      .primero{
+        
+        margin-top: 35px;
+        padding: 10px;
+        background-color: green;
+      }
+      .segundo{
+        
+        margin-top: 35px;
+        padding: 10px;
+        background-color: red;
+      }
+  
+  
+      .bodyNota{
+        background: url("finanzas.jpg");
+      background-size: cover;
+      width: 100%;
+      height: 720px;
+    
+      }
+      .divSelect{
+        display: flex;
+        margin-top: 8px;
+        margin-bottom: 15px;
+      }
+      .divSelect select{
+        background-color: grey;
+      }
+      .buttonSubmit{
+  
+        padding:5px;
+        background-color: green;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 15px;
+        font-weight: bold;
+        margin-top: 1px;
+      }
+  
+      .formInicia{
+        
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        padding-top: 10px;
+        margin-top: 15px;
+      }
+      .formInicia label{
+        margin-top: 5px;
+        font-weight: bold;
+      }
+  
+      .formInicia input{
+        background-color: grey;
+        width: 70%;
+        height: 25px;
+      }  
+    
+    .logo img{
+      
+      width: 200px;
+      height: 125px;
+      margin-left: -5px;
+      margin-top: -5px;
+  
+    }  
+    .logo {
+      display: block;
+  
+    }  
+    .boton_formulario{
+    
+      background-color:#EED09D;
+      border: none;
+      border-radius: 15px;
+    }  
+    
+    .botonesCrearCuenta{
+      display: flex;
+      justify-content: space-around;
+    }
+    
+  
+  }
+
+  @media (min-width: 900px){
+    *{
+      margin: 0px;
+    }
+    body {
+      margin: 0px;
+      font-family: 'Gluten', cursive;
+    }
+    
+    .encabezado{
+      display: flex;
+      background-color:white;
+      
+    }
+    
+    .menu{
+      display: flex;
+      justify-content: space-around;
+    }
+    
+    .encabezado .logo{
+      width: 40%;
+    
+    }
+    
+    .encabezado .menu{
+    width: 90%;
+    margin: auto;
+    
+    }
+    
+    
+    .titulo{
+  
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 45px;
+      margin-top: 15px;
+      
+    }
+    
+    .contactanos button, .sobre button, .crear button, .iniciar button{
+      padding: 10px;
+      background-color:lightgrey;
+      border-radius: 5px;
+      box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.5);    
+      font-size: 20px;
+      font-weight:500;
+      font-family: Arial, Helvetica, sans-serif;
+      margin-top: 20px;
+      
+    }
+    
+    .contactanos button:hover, .sobre button:hover, .crear button:hover, .iniciar button:hover{
+    
+     
+      background-color: gray;
+    }
+    
+    
+    
+    .cuerpo{
+      background: url("finanzas.jpg");
+      background-size: cover;
+      border: 1px solid black;
+      width: 100%;
+      height: 600px;
+      display: flex;
+      justify-content: space-around;
+      
+    }
+    .bodyProfile{
+      background: url("finanzas.jpg");
+      background-size: cover;
+      width: 100%;
+      height: 720px;
+    }
+    .list{
+      display: flex;
+      margin: auto;
+    }
+    .list th, .list td{
+      font-size: 20px;
+      border: 1px solid black;
+      height: 30px;
+      width: 200px;
+      text-align: center;
+    }
+   .incoming{
+    
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 39px;
+    font-weight: bold;
+    text-align: center;
+   }
+    .list th{
+  
+      background-color: grey;
+    }
+  
+    .list td{
+  
+      background-color: lightgrey;
+    }
+    .buttonEdit{
+      background-color: lightseagreen;
+      font-weight: bold;
+      border: 1px solid black;
+      height: 34px;
+      width: 203px;
+      font-size: 15px;
+      text-align: center;
+    }
+    .client, .balance{
+      margin: auto;
+      width: 20%;
+      text-align: center;
+      margin-top: 35px;
+      font-size: 30px;
+      font-weight: bold;
+      font-family: Arial, Helvetica, sans-serif
+  
+    }
+    .table{
+      margin: auto;
+      margin-top: 30px;
+    }
+    
+  
+    .navProfile{
+      display: flex;
+      justify-content: space-between;
+      margin-left: 30px;
+      margin-right: 30px;
+    }
+    
+    .nota{
+    width: 600px;
+    height: 400px;
+    border: black 2px solid;
+    background-color: #D5FEAB;
+    border-radius: 15px;
+    margin-top: 90px;
+    box-shadow: 15px 15px 15px 15px rgba(0, 0, 0, 0.8);
+    
+    }
+    
+    .notaInicia{
+      width: 600px;
+      height: 280px;
+      border: black 2px solid;
+      background-color: lightgray;
+      border-radius: 15px;   
+      position: absolute;
+      top:25%;
+      left: 30%;
+      box-shadow: 15px 15px 15px 15px rgba(0, 0, 0, 0.8);    
+      }
+  
+      .notaInicia2{
+      width: 600px;
+      height: 380px;
+      border: black 2px solid;
+      background-color: lightgray;
+      border-radius: 15px;   
+      position: absolute;
+      top:25%;
+      left: 30%;
+      box-shadow: 15px 15px 15px 15px rgba(0, 0, 0, 0.8);  
+  
+  
+      }
+  
+      .subdel{
+        display: flex;
+        width: 50%;
+        justify-content: space-between;
+        
+  
+      }
+  
+      .primero{
+        
+        margin-top: 35px;
+        padding: 10px;
+        background-color: green;
+      }
+      .segundo{
+        
+        margin-top: 35px;
+        padding: 10px;
+        background-color: red;
+      }
+  
+  
+      .bodyNota{
+        background: url("finanzas.jpg");
+      background-size: cover;
+      width: 100%;
+      height: 720px;
+    
+      }
+      .divSelect{
+        display: flex;
+        margin-top: 8px;
+        margin-bottom: 15px;
+      }
+      .divSelect select{
+        background-color: grey;
+      }
+      .buttonSubmit{
+  
+        padding:5px;
+        background-color: green;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 15px;
+        font-weight: bold;
+        margin-top: 1px;
+      }
+  
+      .formInicia{
+        
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        padding-top: 10px;
+        margin-top: 15px;
+      }
+      .formInicia label{
+        margin-top: 5px;
+        font-weight: bold;
+      }
+  
+      .formInicia input{
+        background-color: grey;
+        width: 50%;
+        height: 25px;
+      }  
+    
+      .logo img{
+      
+        width: 250px;
+        height: 125px;
+        margin-left: -5px;
+        margin-top: -5px;
+    
+      }  
+    .boton_formulario{
+    
+      background-color:#EED09D;
+      border: none;
+      border-radius: 15px;
+    }  
+    
+    .botonesCrearCuenta{
+      display: flex;
+      justify-content: space-around;
+    }
+    
   
   }

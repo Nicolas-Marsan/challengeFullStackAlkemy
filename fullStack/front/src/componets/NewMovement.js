@@ -34,25 +34,26 @@ function NewMovement(props){
         <>{isComplete ? < Redirect to='/profile'/>:
         <div className="bodyNota">
             <div className="crear">
-                          <Link to="/Profile"><button>Back </button></Link>
+                          <Link to="/Profile"><button>Volver </button></Link>
             </div>
+            <p className="incoming">Nueva operacion</p>
            <div className="notaInicia" >
            
             <form className="formInicia" onSubmit={(e)=> submit(e)}>              
-              <label htmlFor="concept">Concept:</label>
+              <label htmlFor="concept">Concepto:</label>
               <input  ref={concept} type="text" name="concept" id="concept"></input>
-              <label htmlFor="amount">Amount:</label>
+              <label htmlFor="amount">Monto:</label>
               <input ref={amount}  type="text" name="amount" id="amount"></input>
-              <label htmlFor="date">Date:</label>
+              <label htmlFor="date">Fecha:</label>
               <input ref={date}  type="date" name="date" id="date"></input>
               <div className="divSelect">
-              <label htmlFor="type">Type:</label>
+              <label htmlFor="type">Tipo:</label>
               <select  ref={type} name="type" id="type"> 
                 <option value='ingreso'>Ingreso</option>
                 <option value='egreso'>Egreso</option>
               </select>             
               </div>
-              <button className="buttonSubmit">Submit</button>
+              <button className="buttonSubmit">Enviar</button>
               
              </form>
            </div>

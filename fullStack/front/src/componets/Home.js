@@ -14,11 +14,11 @@ function Home(props){
                       <nav className="menu">                       
                       <p className= "titulo">Personal Finance</p>
                         <div className="crear">
-                          <Link to="/register"><button>Register</button></Link>
+                          <Link to="/register"><button>Registrarse</button></Link>
                         </div>
 
                         <div className="iniciar">
-                          <Link to="/login"><button>Login</button></Link>
+                          <Link to="/login"><button>Ingresar</button></Link>
                           
                         </div>
 
