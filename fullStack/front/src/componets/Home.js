@@ -1,6 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import {BrowserRouter, Link, Route, Switch} from 'react-router-dom'
+
+import { Link, Route} from 'react-router-dom'
 import Login from './Login';
 function Home(props){
     return(
@@ -8,7 +8,7 @@ function Home(props){
         <Route path="/login" component={Login}/>
         <header className="encabezado">
                 <div className="logo">
-                        <Link to="/"><img src="logo.jpg"></img></Link>
+                        <Link to="/"><img src="logo.jpg" alt="Imagen"></img></Link>
                         
                 </div>
                       <nav className="menu">                       

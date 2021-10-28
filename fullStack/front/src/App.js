@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 import Home from './componets/Home';
 import Login from './componets/Login';
@@ -11,7 +11,7 @@ import ForEgress from './componets/ForEgress';
 import Register from './componets/Register';
 import Logout from './componets/Logout';
 import NewMovement from './componets/NewMovement';
-import {BrowserRouter, Link, Route, Switch,Redirect} from 'react-router-dom'
+import { Route, Switch} from 'react-router-dom'
 import { UserProvider } from './componets/UsuarioContext';
 
 function App() {

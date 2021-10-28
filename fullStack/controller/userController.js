@@ -1,7 +1,6 @@
 var express = require('express');
-const bcryptjs = require('bcryptjs'); //*hasheare contra/*/
+const bcryptjs = require('bcryptjs'); 
 const db = require("../database/models");
-/*const { validationResult }= require('express-validator');*/
 const { Op } = require("sequelize");
 const fs = require("fs");
 const path = require('path');

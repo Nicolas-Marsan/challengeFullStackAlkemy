@@ -1,22 +1,17 @@
 import React from 'react';
-import { useContext,useEffect,useState,useRef } from "react";
+import {useEffect,useState} from "react";
 import PropsMoves from './PropsMoves';
-import {Redirect } from 'react-router-dom';
 import {Link } from 'react-router-dom'
 
 function ForEgress(){
     
-    //const {userGlobal} = useContext (UsuarioContext);
-    //console.log(localStorage);
+    
     let id = sessionStorage.getItem('id');
-    let name= sessionStorage.getItem('name');
+    
     const [moves, setMoves] = useState([]);
-    const [isLoading,setIsLoading] = useState(true);
+    
     const [egreso,setEgreso] = useState(0);
-    const [ingreso,setIngreso] = useState(0);
-    const [saldo,setSaldo] = useState(0);
-    const [reenvia,setReenvia] = useState(false);
-    const moveId = useRef();
+    
     
 
     useEffect(() => {
@@ -27,13 +22,13 @@ function ForEgress(){
           const res = await fetch('http://localhost:3001/movements/movementsById?id=' + id)
             const data= await res.json()            
                 setMoves(data);      
-                setIsLoading(false);  
+                
         }        
 
   useEffect(() => {
     if(moves.movements){ 
 
-    let egresos = moves.movements.filter (movimiento => movimiento.type == 'egreso')
+    let egresos = moves.movements.filter (movimiento => movimiento.type === 'egreso')
     setEgreso(egresos);
     
     }

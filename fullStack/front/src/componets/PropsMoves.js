@@ -1,8 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
-
-
 function PropsMoves(props){
     return (
                 <tr className='list'>

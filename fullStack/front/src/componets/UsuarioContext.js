@@ -3,10 +3,7 @@ import { useState } from "react";
 
 export const UsuarioContext =  createContext();
 
-const dataFirst = {
-    mail:"inexistente",
-    id: 0
-}
+
 
 export const UserProvider = ({children}) => {
 

@@ -30,23 +30,20 @@ function Modifica(props){
        const loadData = async () => {
           const res = await fetch(urlRecu)
             const data= await res.json()            
-                setMoves(data); 
-                console.log("entro en la api", data)     
+                setMoves(data);            
                 
         }
 
         useEffect(() => {
-            if(moves.movement){
-            console.log('entro al if');
-            setOld(true)
-            console.log("los datos del movimiento", moves.movement[0].concept)  
-            console.log("datos del local storage " , localStorage.getItem('moveId'))
+            if(moves.movement){            
             setDate(moves.movement[0].date)
             setType(moves.movement[0].type)
             setState(moves.movement[0].state)
             setId(moves.movement[0].user_id)
             setOldConcept(moves.movement[0].concept)
             setOldAmount(moves.movement[0].amount)
+            
+            setOld(true)
 
             }
         },[moves]);
@@ -76,7 +73,7 @@ function Modifica(props){
 
     useEffect(() => {
         if(elimina){
-            console.log("entro en elimina");
+            
         loadData2();
         }
     }, [elimina]);  
@@ -85,6 +82,8 @@ function Modifica(props){
         const res = await fetch(urlDelete)
           const data= await res.json()                 
       }
+
+      
     return   (
         <>{isComplete ? < Redirect to='/profile'/>:
         <div className ='bodyNota'>
@@ -94,11 +93,11 @@ function Modifica(props){
         <div className="notaInicia" >
             { old && <form className="formInicia" onSubmit={(e)=> submit(e)}>              
               <label htmlFor="concept">Concepto:</label>
-              <input  ref={concept} type="text" name="concept" id="concept" placeholder={oldConcept}></input>
+              <input  ref={concept} type="text" name="concept" id="concept" defaultValue={oldConcept}></input>
               <label htmlFor="amount">Monto:</label>
-              <input ref={amount}  type="text" name="amount" id="amount" placeholder={oldAmount}></input>  
+              <input ref={amount}  type="text" name="amount" id="amount" defaultValue={oldAmount}></input>  
               <div className="subdel">         
-                <button className="primero">Enviar</button>
+                <button className="primero">Modificar</button>
                  <button className="segundo" onClick={(e)=> submit2(e)}>Borrar</button>
               </div>  
           </form>}

@@ -1,10 +1,7 @@
 import React from 'react';
-
-import { useContext,useEffect,useState } from "react";
-import { UsuarioContext } from './UsuarioContext';
-import Card from './Card';
+import {useEffect,useState } from "react";
 import {Redirect } from 'react-router-dom';
-import {BrowserRouter, Link, Route, Switch} from 'react-router-dom'
+
 function Logout(props){
 
     const [logout, setLogout] = useState(false);

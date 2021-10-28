@@ -1,5 +1,5 @@
 import React from 'react';
-import { useContext,useEffect,useState,useRef } from "react";
+import {useEffect,useState,useRef } from "react";
 import PropsMoves from './PropsMoves';
 import ForEntry from './ForEntry';
 import {Redirect } from 'react-router-dom';
@@ -7,36 +7,40 @@ import {Link } from 'react-router-dom'
 
 function Profile(){
     
-    //const {userGlobal} = useContext (UsuarioContext);
-    //console.log(localStorage);
+    
     let id = sessionStorage.getItem('id');
     let name= sessionStorage.getItem('name');
     const [moves, setMoves] = useState([]);
-    const [isLoading,setIsLoading] = useState(true);
     const [egreso,setEgreso] = useState(0);
     const [ingreso,setIngreso] = useState(0);
     const [saldo,setSaldo] = useState(0);
     const [reenvia,setReenvia] = useState(false);
     const [isComplete, setIsComplete] = useState(false)
-    const moveId = useRef();
+    const [cargaId, setCargaId] = useState(false)
+    const [nuevo, setNuevo]= useState([]);
     
 
     useEffect(() => {
+        
+        setCargaId(id);
+        
         loadData();
-    }, []);
+    },[]);
 
        const loadData = async () => {
+        
+
+           console.log("el ide dentro del loaddata",id);
           const res = await fetch('http://localhost:3001/movements/movementsById?id=' + id)
             const data= await res.json()            
-                setMoves(data);      
-                setIsLoading(false);  
-                
+                setMoves(data);  
+                      
         }        
 
   useEffect(() => {
     if(moves.movements){        
-    let ingresos = moves.movements.filter (movimiento => movimiento.type == 'ingreso')
-    let egresos = moves.movements.filter (movimiento => movimiento.type == 'egreso')
+    let ingresos = moves.movements.filter (movimiento => movimiento.type === 'ingreso')
+    let egresos = moves.movements.filter (movimiento => movimiento.type === 'egreso')
     let saldo=0;
     let egresosTotal=0;
     let ingresosTotal=0;
@@ -47,6 +51,25 @@ function Profile(){
         ingresosTotal+= ingresos[i].amount;
     }
 
+    moves.movements.sort((a,b)=>{
+        if(a.date < b.date){
+            return 1;
+        }
+        if(a.date > b.date){
+            return -1;
+        }
+        return 0;
+
+    });
+    let nuevoAux=[];
+    for(let i=0; i<moves.movements.length;i++){
+        if(i<=9){
+        nuevoAux.push(moves.movements[i])
+        }else{break}
+    }
+
+
+    setNuevo(nuevoAux)
     setIngreso(ingresosTotal);
     setEgreso(egresosTotal);
     saldo=(ingresosTotal-egresosTotal);
@@ -66,6 +89,7 @@ function Profile(){
       console.log(egreso)  
     return(
         <>{reenvia ? <Redirect to='./modifica'/>:
+           
         <>{moves.movements && <div className="bodyProfile">
             <div className="navProfile">
             
@@ -95,7 +119,7 @@ function Profile(){
                         </thead>
                         <tbody >
                             {
-                            isComplete && moves.movements.map(record => {
+                            isComplete && nuevo.map(record => {
                                 return <div className="list"> <PropsMoves
                                 concept= {record.concept}
                                 amount = {record.amount}

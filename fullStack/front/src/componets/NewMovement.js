@@ -53,7 +53,7 @@ function NewMovement(props){
                 <option value='egreso'>Egreso</option>
               </select>             
               </div>
-              <button className="buttonSubmit">Enviar</button>
+              <button className="buttonSubmit">Crear</button>
               
              </form>
            </div>
