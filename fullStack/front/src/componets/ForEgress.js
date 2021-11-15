@@ -40,43 +40,62 @@ function ForEgress(){
             <div className="navProfile">
             
             <div className="crear">
-                          <Link to="/profile"><button>Volver</button></Link>
+                          <Link to="/profile"><button type="button" class="btn btn-outline-primary">Volver</button></Link>
             </div>
-            <p className="incoming">Movimientos por egresos</p>
+            <div className="card-header ingresar">
+                <p className="personalh1 ">Movimientos por egresos</p>
+         </div> 
             </div>
             
             <table className="table">
                         <thead>
-                            <tr className="list">
-                                <th>Concepto</th>
-                                <th>Monto</th>
-                                <th>Fecha</th>
-                                <th>Tipo</th>
-                            </tr>
+                        <div className="list">
+                                <div className="row align-items-start detailh1">
+                                    <div className="col colh1">
+                                    Concepto
+                                    </div>
+                                    <div className="col colh1">
+                                    Monto
+                                    </div>
+                                    <div className="col colh1">
+                                    Tipo
+                                    </div>
+                                    <div className="col colh1">
+                                    Fecha
+                                    </div>
+                                    
+                                </div>
+                                
+                                
+                            </div>
                         </thead>
                         <tbody >
                             {
                             egreso && egreso.map(record => {
-                                return <div className="list"> <PropsMoves
-                                concept= {record.concept}
-                                amount = {record.amount}
-                                date = {record.date}
-                                type = {record.type}
-
-                                key={record.id}
-                                />
                                 
-                                </div>
+                                return <div className="list">
+                                             <div className="row align-items-start contenido detail" >
+                                                <div className="col">
+                                                        {record.concept}
+                                                </div>
+                                                <div className="col">
+                                                         ${record.amount}
+                                                </div>
+                                                <div className="col">
+                                                         {record.type}
+                                                </div>
+                                                <div className="col">
+                                                         {record.date}
+                                                </div>
+                                                
+                                            </div>
+                                                
+                                        </div>                                    
                             })
-            
-                            
+                                        
                             }
-
-
-
-
                         </tbody>
-                   </table>           
+                   </table>          
             
             
             

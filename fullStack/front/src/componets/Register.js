@@ -32,22 +32,33 @@ function Register(props){
         <div className ='bodyNota'>
             
             <div className="crear">
-                          <Link to="/"><button>Volver </button></Link>
+                          <Link to="/"><button type="button" class="btn btn-outline-primary">Volver</button></Link>
             </div>
-            <p className="incoming">Registrarse</p>
+            <div className="card-header ingresar">
+                <p className="personalh1 ">Registrarse</p>
+         </div> 
         <div className="notaInicia2" >
-            <form className="formInicia" onSubmit={(e)=> submit(e)}>              
-              <label htmlFor="firstName">Nombre:</label>
-              <input  ref={firstName} type="text" name="firstName" id="firstName"></input>
-              <label htmlFor="lastName">Apellido:</label>
-              <input ref={lastName}  type="text" name="lastName" id="lastName"></input>
-              <label htmlFor="mail">Mail:</label>
-              <input ref={mail}  type="text" name="mail" id="mail"></input>
-              <label htmlFor="password">Password:</label>
-              <input ref={password}  type="password" name="password" id="password"></input>         
-              
-              <button className="primero">Enviar</button>
-          </form>
+            <form className="login" onSubmit={(e)=> submit(e)}>
+  <div className="mb-3">
+
+  <label htmlFor="firstName" for="exampleInputEmail1" className="form-label">Nombre:</label>
+    <input   ref={firstName} type="text" name="firstName" className="form-control" id="firstName" aria-describedby="emailHelp"></input>
+
+    <label htmlFor="lastName" for="exampleInputEmail1" className="form-label">Apellido:</label>
+    <input   ref={lastName} type="text" name="lastName" className="form-control" id="lastName" aria-describedby="emailHelp"></input>
+
+
+    <label htmlFor="mail" for="exampleInputEmail1" className="form-label">Email address</label>
+    <input  ref={mail} type="email" name="mail" className="form-control" id="mail" aria-describedby="emailHelp"></input>
+    <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div className="mb-3">
+    <label  htmlFor="password" for="exampleInputPassword1" className="form-label">Password</label>
+    <input ref={password}   type="password" name="password" className="form-control" id="password"></input>
+  </div>
+  
+  <button type="submit" className="btn btn-primary">Ingresar</button>
+</form>
         </div>
         </div>
          }

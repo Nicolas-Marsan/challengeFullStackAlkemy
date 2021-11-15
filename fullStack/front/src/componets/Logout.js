@@ -12,22 +12,20 @@ function Logout(props){
     }, []);
 
        const loadData = async () => {
-           await fetch('http://localhost:3001/users/logout')
-            .then( res => res.json())
-            .then ( data => {
-                setLogout(data);
+            const res = await fetch('http://localhost:3001/users/logout')
+             const data = await res.json()
+                       
                 sessionStorage.removeItem('id');
+                sessionStorage.removeItem('name');
+                setLogout(data);
                 
-            })
-            .catch( err => console.log(err));
-        
-        }
-
-        
+            }   
+            
+            
         
     return(
         <>
-        {logout ? <Redirect to='/login'  />
+        {logout ? <Redirect to='/'  />
         :  
         <Redirect to='/logout'  />
          }

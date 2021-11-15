@@ -34,28 +34,36 @@ function NewMovement(props){
         <>{isComplete ? < Redirect to='/profile'/>:
         <div className="bodyNota">
             <div className="crear">
-                          <Link to="/Profile"><button>Volver </button></Link>
+                          <Link to="/Profile"><button type="button" class="btn btn-outline-primary">Volver</button></Link>
             </div>
-            <p className="incoming">Nueva operacion</p>
+            <div className="card-header ingresar">
+                <p className="personalh1 ">Nueva operación</p>
+         </div> 
            <div className="notaInicia" >
            
-            <form className="formInicia" onSubmit={(e)=> submit(e)}>              
-              <label htmlFor="concept">Concepto:</label>
-              <input  ref={concept} type="text" name="concept" id="concept"></input>
-              <label htmlFor="amount">Monto:</label>
-              <input ref={amount}  type="text" name="amount" id="amount"></input>
-              <label htmlFor="date">Fecha:</label>
-              <input ref={date}  type="date" name="date" id="date"></input>
-              <div className="divSelect">
-              <label htmlFor="type">Tipo:</label>
-              <select  ref={type} name="type" id="type"> 
-                <option value='ingreso'>Ingreso</option>
-                <option value='egreso'>Egreso</option>
-              </select>             
-              </div>
-              <button className="buttonSubmit">Crear</button>
-              
-             </form>
+            
+             <form className="login" onSubmit={(e)=> submit(e)}>
+                 <div className="mb-3">
+
+                    <label htmlFor="concept" for="exampleInputEmail1" className="form-label">Concepto:</label>
+                    <input   ref={concept} type="text" name="concept" className="form-control" id="firstName" aria-describedby="emailHelp"></input>
+                    <label htmlFor="amount" for="exampleInputEmail1" className="form-label">Monto:</label>
+                    <input   ref={amount} type="text" name="amount" className="form-control" id="lastName" aria-describedby="emailHelp"></input>
+                    <label htmlFor="date" for="exampleInputEmail1" className="form-label">Fecha:</label>
+                    <input  ref={date} type="date" name="date" className="form-control" id="date" aria-describedby="emailHelp"></input>
+                </div>
+                <select ref={type} class="form-select" aria-label="Default select example">
+                    <option selected>Seleccionar opción</option>
+                    <option value="ingreso">Ingreso</option>
+                    <option value="egreso">Egreso</option>                    
+                </select>
+  
+                    <button type="submit" className="btn btn-primary" id="newmovementbutton">Crear</button>
+              </form>
+
+
+
+
            </div>
         </div>
          }

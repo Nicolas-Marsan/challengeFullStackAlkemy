@@ -42,20 +42,31 @@ function Login(props){
         <>
         {isLogged ? <Redirect to='/profile'  />
         : 
-        <div className ='bodyNota'>
+        <div className ='bodyingresar'>
             
             <div className="crear">
-                          <Link to="/"><button>Volver </button></Link>
+                          <Link to="/"><button type="button" class="btn btn-outline-primary">Volver</button></Link>
             </div>
-            <p className="incoming">Ingresar</p> 
-        <div className="notaInicia" >
-            <form className="formInicia" onSubmit={(e)=> submit(e)}>              
-              <label htmlFor="mail">Mail:</label>
-              <input  ref={mail} type="text" name="mail" id="mail"></input>
-              <label htmlFor="password">Password:</label>
-              <input ref={pass}  type="password" name="password" id="password"></input>
-              <button className="primero">Enviar</button>
-          </form>
+            <div className="card-header ingresar">
+                <p className="personalh1 ">Ingresar</p>
+         </div> 
+        <div className="notaInicia" >            
+          <form className="login" onSubmit={(e)=> submit(e)}>
+                <div className="mb-3">
+                    <label htmlFor="mail" for="exampleInputEmail1" className="form-label">Email address</label>
+                    <input  ref={mail} type="email" name="mail" className="form-control" id="mail" aria-describedby="emailHelp"></input>
+                    <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div className="mb-3">
+                    <label  htmlFor="password" for="exampleInputPassword1" className="form-label">Password</label>
+                    <input ref={pass}  type="password" name="password" className="form-control" id="password"></input>
+                </div>
+                <div className="mb-3 form-check">
+                    <input type="checkbox" className="form-check-input" id="exampleCheck1"></input>
+                    <label className="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <button type="submit" className="btn btn-primary">Ingresar</button>
+           </form>
         </div>
         </div>
         }

@@ -88,19 +88,33 @@ function Modifica(props){
         <>{isComplete ? < Redirect to='/profile'/>:
         <div className ='bodyNota'>
             <div className="crear">
-                          <Link to="/Profile"><button>Volver </button></Link>
+                          <Link to="/profile"><button type="button" class="btn btn-outline-primary">Volver</button></Link>
             </div>
+            <div className="card-header ingresar">
+                <p className="personalh1 ">Modificar/Eliminar item</p>
+         </div> 
         <div className="notaInicia" >
-            { old && <form className="formInicia" onSubmit={(e)=> submit(e)}>              
-              <label htmlFor="concept">Concepto:</label>
-              <input  ref={concept} type="text" name="concept" id="concept" defaultValue={oldConcept}></input>
-              <label htmlFor="amount">Monto:</label>
-              <input ref={amount}  type="text" name="amount" id="amount" defaultValue={oldAmount}></input>  
-              <div className="subdel">         
-                <button className="primero">Modificar</button>
-                 <button className="segundo" onClick={(e)=> submit2(e)}>Borrar</button>
-              </div>  
-          </form>}
+            { old && <form className="login" onSubmit={(e)=> submit(e)}>
+                <div className="mb-3">
+                    <label htmlFor="concept" for="exampleInputEmail1" className="form-label">Concepto:</label>
+                    <input  ref={concept} type="text" name="conc" className="form-control" id="conc" aria-describedby="emailHelp" defaultValue={oldConcept}></input>
+                    
+                </div>
+                <div className="mb-3">
+                    <label  htmlFor="amount" for="exampleInputPassword1" className="form-label">Monto:</label>
+                    <input ref={amount}  type="number" name="numb" className="form-control" id="numb" defaultValue={oldAmount}></input>
+                </div>
+                <div className="modificaButtons">
+                
+                <button class="btn btn-danger" onClick={(e)=> submit2(e)}>Eliminar</button>
+                <button type="submit" className="btn btn-primary">Modificar</button>
+                
+                </div>
+           </form>
+             }
+
+
+
         </div>
         </div>
         

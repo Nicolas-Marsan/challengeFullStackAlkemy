@@ -1,12 +1,29 @@
 import React from 'react';
 function PropsMoves(props){
+
+    
     return (
-                <tr className='list'>
-                    <td>{props.concept}</td>
-                    <td>{props.amount}</td>
-                    <td>{props.date}</td>
-                    <td>{props.type}</td>
-                </tr>
+
+                 <div className="row align-items-start consh2">
+                        <div className="col">
+                        {props.concept}
+                        </div>
+                        <div className="col">
+                        {props.amount}
+                        </div>
+                        <div className="col">
+                        {props.type}
+                        </div>
+                        <div className="col">
+                        {props.date}
+                        </div>
+                        
+                        
+                 </div>
+
+
+
+                
             )
     }
     

@@ -15,10 +15,18 @@ function Profile(){
     const [ingreso,setIngreso] = useState(0);
     const [saldo,setSaldo] = useState(0);
     const [reenvia,setReenvia] = useState(false);
+    const [cerrarS,setCerrar] = useState(false);
+    const [isLogged,setIsLogged] = useState(false);
     const [isComplete, setIsComplete] = useState(false)
     const [cargaId, setCargaId] = useState(false)
     const [nuevo, setNuevo]= useState([]);
     
+    useEffect(() => {
+        
+        if(!id){            
+            setIsLogged(true)
+           }
+    },[]);
 
     useEffect(() => {
         
@@ -45,10 +53,10 @@ function Profile(){
     let egresosTotal=0;
     let ingresosTotal=0;
     for(let i=0; i<egresos.length;i++){
-        egresosTotal+= egresos[i].amount;
+        egresosTotal+= parseFloat(egresos[i].amount);
     }
     for(let i=0; i<ingresos.length;i++){
-        ingresosTotal+= ingresos[i].amount;
+        ingresosTotal+= parseFloat(ingresos[i].amount);
     }
 
     moves.movements.sort((a,b)=>{
@@ -72,7 +80,8 @@ function Profile(){
     setNuevo(nuevoAux)
     setIngreso(ingresosTotal);
     setEgreso(egresosTotal);
-    saldo=(ingresosTotal-egresosTotal);
+    saldo=ingresosTotal-egresosTotal;
+    saldo=saldo.toFixed(2);
     setSaldo(saldo);
     setIsComplete(true)
     }
@@ -84,70 +93,127 @@ function Profile(){
   localStorage.setItem("moveId", e.target.id); 
   setReenvia(true);
   
- }      
+ }  
+ function cerrar(e){
+    
+    setCerrar(true);
+    
+   }  
 
-      console.log(egreso)  
+    
     return(
+        <>{isLogged ? <Redirect to='./'/>:
+
+        <>{cerrarS ? <Redirect to='./logout'/>: 
+
         <>{reenvia ? <Redirect to='./modifica'/>:
-           
+          
         <>{moves.movements && <div className="bodyProfile">
-            <div className="navProfile">
             
-            <div className="crear">
-                          <Link to="/NewMovement"><button>Crear nuevo movimiento</button></Link>
-            </div>
-            <div className="crear">
-                          <Link to="/ForEntry"><button>Movimientos por ingresos </button></Link>
-            </div>
-            <div className="crear">
-                          <Link to="/ForEgress"><button>Movimientos por egresos</button></Link>
-            </div>
-            </div>
-            <p className="client">Cliente:{name} </p>  
-            <p className="balance">Saldo:{saldo}</p>      
+
+                             <div className="row menuhome mh">
+                                    
+                                    
+                                    <div className="col">
+                                        <p className="client">Cliente:{name} </p>  
+                                    </div>
+                                    <div className="col">
+                                        <p className="balance">Saldo: ${saldo}</p>  
+                                    </div>
+                                    <div className="col">
+                                    <button type="button" class="btn btn-primary" onClick={(e)=> cerrar(e)}>Cerrar sesión</button>
+                                    </div>
+                                
+                                </div>
+                            <div className="row menuhome">
+                                
+                                
+                                <div className="col menu">
+                                        <Link to="/NewMovement"><button type="button" class="btn btn-primary btn-sm" name="primero">Crear nuevo movimiento</button></Link>
+                                </div>
+                                <div className="col">
+                                        <Link to="/ForEntry"><button type="button" class="btn btn-primary btn-sm">Movimientos por ingresos</button></Link>
+                                </div>
+                                <div className="col">
+                                        <Link to="/ForEgress"><button type="button" class="btn btn-primary btn-sm">Movimientos por egresos</button></Link>
+                                </div>
+                            </div>
+
+  
+
+
+                                
+           
+            
+                
 
 
             <table className="table">
                         <thead>
-                            <tr className="list">
-                                <th>Concepto</th>
-                                <th>Monto</th>
-                                <th>Fecha</th>
-                                <th>Tipo</th>
-                                <th>Accion</th>
-                            </tr>
+                        <div className="list">
+                                <div className="row align-items-start detailh1">
+                                    <div className="col colh1">
+                                    Concepto
+                                    </div>
+                                    <div className="col colh1">
+                                    Monto
+                                    </div>
+                                    <div className="col colh1">
+                                    Tipo
+                                    </div>
+                                    <div className="col colh1">
+                                    Fecha
+                                    </div>
+                                    <div className="col colh1">
+                                    Acción
+                                    </div>
+                                </div>
+                                
+                                
+                            </div>
                         </thead>
                         <tbody >
                             {
                             isComplete && nuevo.map(record => {
-                                return <div className="list"> <PropsMoves
-                                concept= {record.concept}
-                                amount = {record.amount}
-                                date = {record.date}
-                                type = {record.type}
-
-                                key={record.id}
-                                />
-                                <button className="buttonEdit" id={record.id} onClick={(e)=> rescue(e)}>Borrar/editar</button>
-                                </div>
+                                
+                                return <div className="list">
+                                             <div className="row align-items-start contenido detail" >
+                                                <div className="col">
+                                                        {record.concept}
+                                                </div>
+                                                <div className="col">
+                                                         ${record.amount}
+                                                </div>
+                                                <div className="col">
+                                                         {record.type}
+                                                </div>
+                                                <div className="col">
+                                                         {record.date}
+                                                </div>
+                                                <div className="col">
+                                                        <button className="buttonEdit" id={record.id} onClick={(e)=> rescue(e)}>Borrar/editar</button>
+                                                </div>
+                                            </div>
+                                                
+                                        </div>                                    
                             })
-            
-                            
+                                        
                             }
-
-
-
-
                         </tbody>
                    </table>           
             
             
             
+        
         </div>
          }
          </>
         }
          </>
+        }     
+         </>
+        }
+        </>
     )
     
 }

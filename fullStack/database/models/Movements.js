@@ -15,7 +15,7 @@ let cols = {
     },
     amount:{
 
-        type: dataTypes.INTEGER
+        type: dataTypes.DECIMAL
     },
     date: {
         type:dataTypes.STRING
