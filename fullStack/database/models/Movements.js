@@ -1,42 +1,38 @@
-const Sequelize = require('sequelize');
+const Sequelize = require("sequelize");
 
-
-module.exports = (sequelize,dataTypes) => {
-
-let alias = "Movements";
-let cols = {
+module.exports = (sequelize, dataTypes) => {
+  let alias = "Movements";
+  let cols = {
     id: {
-        type: dataTypes.INTEGER,
-        primaryKey:true,
-        autoIncrement:true
+      type: dataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
     },
     concept: {
-        type: dataTypes.STRING
+      type: dataTypes.STRING,
     },
-    amount:{
-
-        type: dataTypes.DECIMAL
+    amount: {
+      type: dataTypes.DECIMAL,
     },
     date: {
-        type:dataTypes.STRING
+      type: dataTypes.STRING,
     },
     type: {
-        type: dataTypes.STRING
+      type: dataTypes.STRING,
     },
-    state: {  
-        type: dataTypes.STRING
-      },
-    user_id:{  
-          type: dataTypes.INTEGER
-         }
-};
+    state: {
+      type: dataTypes.STRING,
+    },
+    user_id: {
+      type: dataTypes.INTEGER,
+    },
+  };
 
-let config = {
+  let config = {
     tableName: "movements",
-    timestamps: false
+    timestamps: false,
+  };
+  const Movements = sequelize.define(alias, cols, config);
 
-}
-const Movements = sequelize.define(alias,cols,config);
-
-return Movements;
-}
+  return Movements;
+};

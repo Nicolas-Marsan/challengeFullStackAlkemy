@@ -18,16 +18,15 @@ function NewMovement(props){
     const submit = async (e) =>{
         e.preventDefault(); 
         
-        console.log(user_id)  ;     
-        const res = await Axios.post(url,{
-            concept:concept.current.value,
+        console.log(user_id);     
+        const res = await Axios.post(url,{            
+           concept:concept.current.value,
             amount:amount.current.value,
             date:date.current.value,
             type:type.current.value,
             state:'activo',
-            user_id:user_id
-            
-        }) 
+            user_id:user_id           
+        },{headers: {authorization: sessionStorage.getItem("token")},}) 
         setIsComplete(true)
     }               
     return   (

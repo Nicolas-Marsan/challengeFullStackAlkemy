@@ -1,38 +1,34 @@
-const Sequelize = require('sequelize');
+const Sequelize = require("sequelize");
 
-
-module.exports = (sequelize,dataTypes) => {
-
-let alias = "Usuarios";
-let cols = {
+module.exports = (sequelize, dataTypes) => {
+  let alias = "Usuarios";
+  let cols = {
     id: {
-        type: dataTypes.INTEGER,
-        primaryKey:true,
-        autoIncrement:true
+      type: dataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
     },
     first_name: {
-        type: dataTypes.STRING
+      type: dataTypes.STRING,
     },
-    last_name:{
-
-        type: dataTypes.STRING
+    last_name: {
+      type: dataTypes.STRING,
     },
     mail: {
-        type:dataTypes.STRING
+      type: dataTypes.STRING,
     },
     password: {
-        type: dataTypes.STRING
+      type: dataTypes.STRING,
     }
-};
+  };
 
-let config = {
+  let config = {
     tableName: "usuarios",
-    timestamps: false
+    timestamps: false,
+  };
+  const Usuarios = sequelize.define(alias, cols, config);
 
-}
-const Usuarios = sequelize.define(alias,cols,config);
-
-/*Usuarios.associate = function(models){
+  /*Usuarios.associate = function(models){
     Usuarios.hasMany(models.Notas,{
                as: "nota",
                foreignKey: "usuario_id"
@@ -57,6 +53,5 @@ const Usuarios = sequelize.define(alias,cols,config);
 
 }*/
 
-
-return Usuarios;
-}
+  return Usuarios;
+};
