@@ -46,25 +46,40 @@ let userController = {
             }
          })
         .then(function(usuario){
-            
+                
             userToLogin=usuario[0];
             
             if(userToLogin) {
                 let passIsOk = bcryptjs.compareSync(req.body.password, userToLogin.password);            
                 
                 if(passIsOk) {
-                //delete userToLogin.password;
+                
                 const userToken =jwt.sign({id:userToLogin.id},"secret");
-                req.session.userLogged = userToLogin; 
-                                
-                return res.json(
-                  {info:req.session,
+                                               
+                return res.status(200).json(
+                  {data:userToLogin,
                     token:userToken});
-              }
+              }else{
+               console.log("credenciales invalidad");
+                let error="credenciales invalidad";
+              
+              return res.json({
+                error:error
+              });
+            }
+
+
             }else{
-              //req.session.userLogged = undefined;
-              res.send(req.session)}
-          })
+              console.log("credenciales invalidad");
+              let error="credenciales invalidad";
+              
+              return res.json({
+                error:error
+              });
+          }
+        
+      })
+      
     },
    
    logout: function(req, res){

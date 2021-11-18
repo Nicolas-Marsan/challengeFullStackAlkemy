@@ -5,13 +5,13 @@ function verification(req, res, next) {
     if (aut) {
     jwt.verify(aut, "secret", (err, user) => {
       if (err) {
-        return res.status(403).json("Token is invalid");
+        return res.status(403).json("Token invalido");
       }
 
       next();
     });
   } else {
-    res.status(401).json("You are not authenticated!!!");
+    res.status(401).json("NO estas autenticado!");
   }
 }
 

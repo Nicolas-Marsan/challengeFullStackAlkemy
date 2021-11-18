@@ -33,7 +33,7 @@ function NewMovement(props){
         <>{isComplete ? < Redirect to='/profile'/>:
         <div className="bodyNota">
             <div className="crear">
-                          <Link to="/Profile"><button type="button" class="btn btn-outline-primary">Volver</button></Link>
+                          <Link to="/Profile"><button type="button" class="btn btn-outline-primary" id="backButton">Volver</button></Link>
             </div>
             <div className="card-header ingresar">
                 <p className="personalh1 ">Nueva operación</p>

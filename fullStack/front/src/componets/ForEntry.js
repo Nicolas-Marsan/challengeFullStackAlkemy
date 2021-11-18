@@ -39,7 +39,7 @@ function ForEntry() {
           <div className="navProfile">
             <div className="crear">
               <Link to="/profile">
-                <button type="button" class="btn btn-outline-primary">
+                <button type="button" class="btn btn-outline-primary" id="backButton">
                   Volver
                 </button>
               </Link>

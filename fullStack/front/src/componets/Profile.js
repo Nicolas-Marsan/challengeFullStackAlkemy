@@ -115,7 +115,7 @@ function Profile() {
                     <div className="bodyProfile">
                       <div className="row menuhome mh">
                         <div className="col">
-                          <p className="client">Cliente:{name} </p>
+                          <p className="client">Cliente:{" " + name} </p>
                         </div>
                         <div className="col">
                           <p className="balance">Saldo: ${saldo}</p>
