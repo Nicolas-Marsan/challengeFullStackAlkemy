@@ -12,13 +12,20 @@ let userController = {
 
                db.Usuarios.findAll({
                                   where:{
-                                  mail: {[Op.like]: '%' + req.body.mail + '%'}             
+                                  mail: {[Op.like]: req.body.mail}             
                                    }
                                     })
                                   .then(function(usuarios){
       
                                     if (usuarios != ""){
-                                    res.send("el usuario ya existe");
+                                      let error="Este mail ya esta en uso";
+                                      console.log("Este mail ya esta en uso");
+
+                                      return res.json({
+                                        error:error,
+                                        mail:req.body.mail
+                                      });     
+
                                     }else{
                db.Usuarios.create({
 
@@ -30,7 +37,7 @@ let userController = {
                      });
 
 
-                    res.send(req.body);
+                     return res.json("Usuario creado satisfactoriamente");  
 
                 }  
             })
@@ -60,7 +67,7 @@ let userController = {
                   {data:userToLogin,
                     token:userToken});
               }else{
-               console.log("credenciales invalidad");
+               
                 let error="credenciales invalidad";
               
               return res.json({
@@ -70,7 +77,7 @@ let userController = {
 
 
             }else{
-              console.log("credenciales invalidad");
+              
               let error="credenciales invalidad";
               
               return res.json({

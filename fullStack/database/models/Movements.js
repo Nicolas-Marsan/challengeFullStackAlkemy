@@ -26,6 +26,9 @@ module.exports = (sequelize, dataTypes) => {
     user_id: {
       type: dataTypes.INTEGER,
     },
+    category_id: {
+      type: dataTypes.INTEGER,
+    }
   };
 
   let config = {
@@ -33,6 +36,24 @@ module.exports = (sequelize, dataTypes) => {
     timestamps: false,
   };
   const Movements = sequelize.define(alias, cols, config);
+
+  Movements.associate = function(models){
+    Movements.belongsTo(models.Usuarios, {
+
+        as: "users",
+        foreignKey: "user_id"
+    })
+
+  };
+
+  Movements.associate = function(models){
+    Movements.belongsTo(models.Categories, {
+
+        as: "movement",
+        foreignKey: "category_id"
+    })
+
+  };
 
   return Movements;
 };
