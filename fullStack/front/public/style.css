@@ -13,6 +13,19 @@ madera claro D5FEAB
   margin: 20px;
 }
 
+#categories{
+
+   margin-top: 15px;
+}
+#select{
+  width: 30%;
+  margin: auto;
+  background-color: lightsteelblue;
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
 .personalh1{
 
   font-size: 35px;

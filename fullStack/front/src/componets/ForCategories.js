@@ -1,17 +1,39 @@
 import React from "react";
-import { useEffect, useState } from "react";
-
-
+import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
+import Axios from "axios";
 
-function ForEntry() {
+function ForEgress() {
+  const urlCat = "http://localhost:3001/movements/categories";
   let id = sessionStorage.getItem("id");
   const [moves, setMoves] = useState([]);
-  const [ingreso, setIngreso] = useState(0);
+  const [arrayCategorias, setarrayCategorias] = useState();
+  const [categories, setCategories] = useState();
+  const [catReady, setCatReady] = useState();
+  const [category, setCategory] = useState();
+  const [isComplete, setIsComplete] = useState();
+  const cat = useRef();
+
+  useEffect(() => {
+    loadData2();
+  }, []);
+
+  const loadData2 = async () => {
+    const res = await fetch(urlCat,{
+        headers: {Authorization: sessionStorage.getItem("token")}
+    }        
+        );
+    const data = await res.json();
+    setCategories(data.category);
+    setCatReady(true);
+  };
 
   useEffect(() => {
     loadData();
   }, []);
+
+  
+  
 
   const loadData = async () => {
     const res = await fetch(
@@ -23,15 +45,29 @@ function ForEntry() {
     setMoves(data);
   };
 
+   
   useEffect(() => {
     if (moves.movements) {
-      let ingresos = moves.movements.filter(
-        (movimiento) => movimiento.type === "ingreso"
+        
+      let egresos = moves.movements.filter(
+        
+        (movimiento) => movimiento.category_id == category
       );
-      setIngreso(ingresos);
+      setarrayCategorias(egresos);
+        
+      
     }
-  }, [moves]);
+  }, [moves,category]);
 
+  
+
+  const cambia = async (e) => {
+    setCategory(cat.current.value)
+    console.log("entro a cambia")
+};
+  
+  
+  
   return (
     <>
       {
@@ -45,10 +81,27 @@ function ForEntry() {
               </Link>
             </div>
             <div className="card-header ingresar">
-              <p className="personalh1 ">Movimientos por ingresos</p>
+              <p className="personalh1 ">Movimientos por categorias</p>
             </div>
           </div>
-
+         
+          <select onChange={(e) => cambia(e)}
+                ref={cat}
+                class="form-select"
+                id="select"
+                aria-label="Default select example"
+              >
+                <option selected  >Categoria</option>
+                {catReady &&
+                  categories.map((cat) => {
+                    return (
+                      <option  value={cat.id} key={cat.id}>
+                        {cat.category}
+                      </option>
+                    );
+                  })}
+              </select>
+              
           <table className="table">
             <thead>
               <div className="list">
@@ -62,8 +115,8 @@ function ForEntry() {
               </div>
             </thead>
             <tbody>
-              {ingreso &&
-                ingreso.map((record) => {
+              {arrayCategorias &&
+                arrayCategorias.map((record) => {
                   return (
                     <div className="list">
                       <div className="row align-items-start contenido detail">
@@ -84,4 +137,4 @@ function ForEntry() {
   );
 }
 
-export default ForEntry;
+export default ForEgress;

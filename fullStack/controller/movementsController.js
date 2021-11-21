@@ -17,17 +17,35 @@ let movementsController = {
       type: req.body.type,
       state: req.body.state,
       user_id: req.body.user_id,
+      category_id:req.body.category_id
     });
     res.send(req.body);
+  },
+  categories: function (req, res) {
+    db.Categories.findAll().then(function (category) {
+      return res.json({ category });
+    });
   },
   movements: function (req, res) {
     db.Movements.findAll({
       where: {
         user_id: { [Op.like]: "%" + req.query.id + "%" },
         state: { [Op.like]: "activo" },
-      },
+        
+      },include:[{association: "categories"}]
     }).then(function (movements) {
       return res.status(200).json({ movements });
+    });
+  },
+  movementsCategory: function (req, res) {
+    db.Movements.findAll({
+      where: {
+        category_id: { [Op.like]: req.query.category_id },
+        
+        
+      },include:[{association: "categories"}]
+    }).then(function (movements) {
+      return res.json({ movements });
     });
   },
   movement: function (req, res) {

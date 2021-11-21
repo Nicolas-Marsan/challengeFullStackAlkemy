@@ -1,6 +1,5 @@
 import React from "react";
 import { useEffect, useState, useRef } from "react";
-import PropsMoves from "./PropsMoves";
 import ForEntry from "./ForEntry";
 import { Redirect } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -41,7 +40,7 @@ function Profile() {
     const data = await res.json();
     setMoves(data);
   };
-
+      console.log(moves.movements);
   useEffect(() => {
     if (moves.movements) {
       let ingresos = moves.movements.filter(
@@ -162,6 +161,16 @@ function Profile() {
                             </button>
                           </Link>
                         </div>
+                        <div className="col">
+                          <Link to="/ForCategories">
+                            <button
+                              type="button"
+                              class="btn btn-primary btn-sm"
+                            >
+                              Movimientos por categoria
+                            </button>
+                          </Link>
+                        </div>
                       </div>
 
                       <table className="table">
@@ -172,6 +181,7 @@ function Profile() {
                               <div className="col colh1">Monto</div>
                               <div className="col colh1">Tipo</div>
                               <div className="col colh1">Fecha</div>
+                              <div className="col colh1">Categoria</div>
                               <div className="col colh1">Acción</div>
                             </div>
                           </div>
@@ -186,6 +196,7 @@ function Profile() {
                                     <div className="col">${record.amount}</div>
                                     <div className="col">{record.type}</div>
                                     <div className="col">{record.date}</div>
+                                    <div className="col">{(record.categories.category)}</div>
                                     <div className="col">
                                       <button
                                         className="buttonEdit"

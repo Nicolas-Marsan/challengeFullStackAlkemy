@@ -1,6 +1,5 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import PropsMoves from "./PropsMoves";
 import { Link } from "react-router-dom";
 
 function ForEgress() {
@@ -58,6 +57,7 @@ function ForEgress() {
                   <div className="col colh1">Monto</div>
                   <div className="col colh1">Tipo</div>
                   <div className="col colh1">Fecha</div>
+                  <div className="col colh1">Categoria</div>
                 </div>
               </div>
             </thead>
@@ -71,6 +71,7 @@ function ForEgress() {
                         <div className="col">${record.amount}</div>
                         <div className="col">{record.type}</div>
                         <div className="col">{record.date}</div>
+                        <div className="col">{(record.categories.category)}</div>
                       </div>
                     </div>
                   );

@@ -49,7 +49,7 @@ module.exports = (sequelize, dataTypes) => {
   Movements.associate = function(models){
     Movements.belongsTo(models.Categories, {
 
-        as: "movement",
+        as: "categories",
         foreignKey: "category_id"
     })
 

@@ -10,6 +10,7 @@ import ForEntry from './componets/ForEntry';
 import ForEgress from './componets/ForEgress';
 import Register from './componets/Register';
 import Logout from './componets/Logout';
+import ForCategories from './componets/ForCategories';
 import NewMovement from './componets/NewMovement';
 import { Route, Switch} from 'react-router-dom'
 import { UserProvider } from './componets/UsuarioContext';
@@ -29,6 +30,7 @@ function App() {
       <Route path="/forEntry" component={ForEntry}/>
       <Route path="/forEgress" component={ForEgress}/>
       <Route path="/register" component={Register}/>
+      <Route path="/forCategories" component={ForCategories}/>
       <Route path="/modifica" component={Modifica}/>
       <Route path="/profile" component={Profile}/>
       <Route path="/NewMovement" component={NewMovement}/>
