@@ -58,7 +58,7 @@ function Modifica(props) {
   const submit = async (e) => {
     e.preventDefault();
 
-    console.log(user_id);
+    
     const res = await Axios.post(url, {
       concept: concept.current.value,
       amount: amount.current.value,
@@ -122,6 +122,7 @@ function Modifica(props) {
                     className="form-control"
                     id="conc"
                     aria-describedby="emailHelp"
+                    required
                     defaultValue={oldConcept}
                   ></input>
                 </div>
@@ -140,6 +141,7 @@ function Modifica(props) {
                     className="form-control"
                     id="numb"
                     defaultValue={oldAmount}
+                    required
                   ></input>
                 </div>
                 <div className="modificaButtons">

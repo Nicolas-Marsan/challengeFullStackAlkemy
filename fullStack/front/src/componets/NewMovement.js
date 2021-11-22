@@ -21,37 +21,50 @@ function NewMovement(props) {
   }, []);
 
   const loadData = async () => {
-    const res = await fetch(urlCat,{
-        headers: {Authorization: sessionStorage.getItem("token")}
-    }
-        
-        );
+    const res = await fetch(urlCat, {
+      headers: { Authorization: sessionStorage.getItem("token") },
+    });
     const data = await res.json();
     setCategories(data.category);
     setCatReady(true);
   };
 
- 
-  
   const submit = async (e) => {
     e.preventDefault();
+    console.log("submint");
+    if (type.current.value != "Tipo" && cat.current.value != "Categoria") {
+      const res = await Axios.post(
+        url,
+        {
+          concept: concept.current.value,
+          amount: amount.current.value,
+          date: date.current.value,
+          type: type.current.value,
+          state: "activo",
+          user_id: user_id,
+          category_id: cat.current.value,
+        },
+        { headers: { authorization: sessionStorage.getItem("token") } }
+      );
+      setIsComplete(true);
+    } else {
+      let errorTipo = document.querySelector("#errorTipo");
+      let errorCat = document.querySelector("#errorCat");
+      
 
-    
-    const res = await Axios.post(
-      url,
-      {
-        concept: concept.current.value,
-        amount: amount.current.value,
-        date: date.current.value,
-        type: type.current.value,
-        state: "activo",
-        user_id: user_id,
-        category_id:cat.current.value
-      },
-      { headers: { authorization: sessionStorage.getItem("token") } }
-    );
-    setIsComplete(true);
+      if (type.current.value == "Tipo") {
+        errorTipo.innerHTML = "Este campo es requerido";
+      } else {
+        errorTipo.innerHTML = "";
+      }
+      if (cat.current.value == "Categoria") {
+        errorCat.innerHTML = "Este campo es requerido";
+      } else {
+        errorCat.innerHTML = "";
+      }
+    }
   };
+
   return (
     <>
       {isComplete ? (
@@ -73,7 +86,11 @@ function NewMovement(props) {
             <p className="personalh1 ">Nueva operación</p>
           </div>
           <div className="notaInicia">
-            <form className="login" onSubmit={(e) => submit(e)}>
+            <form
+              className="login"
+              id="formuNewMovement"
+              onSubmit={(e) => submit(e)}
+            >
               <div className="mb-3">
                 <label
                   htmlFor="concept"
@@ -89,6 +106,7 @@ function NewMovement(props) {
                   className="form-control"
                   id="firstName"
                   aria-describedby="emailHelp"
+                  required
                 ></input>
                 <label
                   htmlFor="amount"
@@ -104,6 +122,7 @@ function NewMovement(props) {
                   className="form-control"
                   id="lastName"
                   aria-describedby="emailHelp"
+                  required
                 ></input>
                 <label
                   htmlFor="date"
@@ -119,12 +138,14 @@ function NewMovement(props) {
                   className="form-control"
                   id="date"
                   aria-describedby="emailHelp"
+                  required
                 ></input>
               </div>
-              <select 
+              <select
                 ref={cat}
                 class="form-select"
                 aria-label="Default select example"
+                required
               >
                 <option selected>Categoria</option>
                 {catReady &&
@@ -136,16 +157,19 @@ function NewMovement(props) {
                     );
                   })}
               </select>
-              <select id="categories"
+              <p id="errorCat"></p>
+              <select
+                id="categories"
                 ref={type}
                 class="form-select"
                 aria-label="Default select example"
+                required
               >
                 <option selected>Tipo</option>
                 <option value="ingreso">Ingreso</option>
                 <option value="egreso">Egreso</option>
               </select>
-              
+              <p id="errorTipo"></p>
               <button
                 type="submit"
                 className="btn btn-primary"

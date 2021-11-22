@@ -37,17 +37,7 @@ let movementsController = {
       return res.status(200).json({ movements });
     });
   },
-  movementsCategory: function (req, res) {
-    db.Movements.findAll({
-      where: {
-        category_id: { [Op.like]: req.query.category_id },
-        
-        
-      },include:[{association: "categories"}]
-    }).then(function (movements) {
-      return res.json({ movements });
-    });
-  },
+  
   movement: function (req, res) {
     db.Movements.findAll({
       where: {

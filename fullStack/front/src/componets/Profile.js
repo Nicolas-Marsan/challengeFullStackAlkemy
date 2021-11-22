@@ -40,7 +40,7 @@ function Profile() {
     const data = await res.json();
     setMoves(data);
   };
-      console.log(moves.movements);
+      
   useEffect(() => {
     if (moves.movements) {
       let ingresos = moves.movements.filter(
@@ -88,7 +88,7 @@ function Profile() {
   }, [moves]);
 
   function rescue(e) {
-    console.log(e.target.id);
+    
     localStorage.setItem("moveId", e.target.id);
     setReenvia(true);
   }
@@ -123,13 +123,14 @@ function Profile() {
                           <button
                             type="button"
                             class="btn btn-primary"
+                            id="closeSession"
                             onClick={(e) => cerrar(e)}
                           >
                             Cerrar sesión
                           </button>
                         </div>
                       </div>
-                      <div className="row menuhome">
+                      <div className="row menuhome" id="menuProfile">
                         <div className="col menu">
                           <Link to="/NewMovement">
                             <button

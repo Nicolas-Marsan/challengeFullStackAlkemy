@@ -65,6 +65,7 @@ function Login(props) {
                   className="form-control"
                   id="mail"
                   aria-describedby="emailHelp"
+                  required
                 ></input>
                 <div id="emailHelp" className="form-text">
                   No comparta su contraseña con nadie.
@@ -84,6 +85,7 @@ function Login(props) {
                   name="password"
                   className="form-control"
                   id="password"
+                  required
                 ></input>
               </div>
               <div className="mb-3">
@@ -145,6 +147,7 @@ function Login(props) {
                       className="form-control"
                       id="mail"
                       aria-describedby="emailHelp"
+                      required
                     ></input>
                     <div id="emailHelp" className="form-text">
                       No comparta su contraseña con nadie.
@@ -164,6 +167,7 @@ function Login(props) {
                       name="password"
                       className="form-control"
                       id="password"
+                      required
                     ></input>
                     <div className="mb-3">
                 
