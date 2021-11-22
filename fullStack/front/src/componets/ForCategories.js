@@ -19,10 +19,9 @@ function ForEgress() {
   }, []);
 
   const loadData2 = async () => {
-    const res = await fetch(urlCat,{
-        headers: {Authorization: sessionStorage.getItem("token")}
-    }        
-        );
+    const res = await fetch(urlCat, {
+      headers: { Authorization: sessionStorage.getItem("token") },
+    });
     const data = await res.json();
     setCategories(data.category);
     setCatReady(true);
@@ -32,42 +31,31 @@ function ForEgress() {
     loadData();
   }, []);
 
-  
-  
-
   const loadData = async () => {
     const res = await fetch(
-      "http://localhost:3001/movements/movementsById?id=" + id,{
-        headers: {Authorization: sessionStorage.getItem("token")}
-    }
+      "http://localhost:3001/movements/movementsById?id=" + id,
+      {
+        headers: { Authorization: sessionStorage.getItem("token") },
+      }
     );
     const data = await res.json();
     setMoves(data);
   };
 
-   
   useEffect(() => {
     if (moves.movements) {
-        
       let egresos = moves.movements.filter(
-        
         (movimiento) => movimiento.category_id == category
       );
       setarrayCategorias(egresos);
-        
-      
     }
-  }, [moves,category]);
-
-  
+  }, [moves, category]);
 
   const cambia = async (e) => {
-    setCategory(cat.current.value)
-    console.log("entro a cambia")
-};
-  
-  
-  
+    setCategory(cat.current.value);
+    console.log("entro a cambia");
+  };
+
   return (
     <>
       {
@@ -75,7 +63,11 @@ function ForEgress() {
           <div className="navProfile">
             <div className="crear">
               <Link to="/profile">
-                <button type="button" class="btn btn-outline-primary" id="backButton">
+                <button
+                  type="button"
+                  class="btn btn-outline-primary"
+                  id="backButton"
+                >
                   Volver
                 </button>
               </Link>
@@ -84,24 +76,25 @@ function ForEgress() {
               <p className="personalh1 ">Movimientos por categorias</p>
             </div>
           </div>
-         
-          <select onChange={(e) => cambia(e)}
-                ref={cat}
-                class="form-select"
-                id="select"
-                aria-label="Default select example"
-              >
-                <option selected  >Categoria</option>
-                {catReady &&
-                  categories.map((cat) => {
-                    return (
-                      <option  value={cat.id} key={cat.id}>
-                        {cat.category}
-                      </option>
-                    );
-                  })}
-              </select>
-              
+
+          <select
+            onChange={(e) => cambia(e)}
+            ref={cat}
+            class="form-select"
+            id="select"
+            aria-label="Default select example"
+          >
+            <option selected>Categoria</option>
+            {catReady &&
+              categories.map((cat) => {
+                return (
+                  <option value={cat.id} key={cat.id}>
+                    {cat.category}
+                  </option>
+                );
+              })}
+          </select>
+
           <table className="table">
             <thead>
               <div className="list">
@@ -124,7 +117,7 @@ function ForEgress() {
                         <div className="col">${record.amount}</div>
                         <div className="col">{record.type}</div>
                         <div className="col">{record.date}</div>
-                        <div className="col">{(record.categories.category)}</div>
+                        <div className="col">{record.categories.category}</div>
                       </div>
                     </div>
                   );

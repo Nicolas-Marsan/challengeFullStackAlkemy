@@ -2,14 +2,14 @@ var express = require("express");
 const bcryptjs = require("bcryptjs"); //*hasheare contra/*/
 const db = require("../database/models");
 /*const { validationResult }= require('express-validator');*/
-const verification = require ('../middleware/verification');
-const cors = require('cors');
+const verification = require("../middleware/verification");
+const cors = require("cors");
 const { Op } = require("sequelize");
 const fs = require("fs");
 const path = require("path");
 
 let movementsController = {
-   creation: function (req, res) {
+  creation: function (req, res) {
     db.Movements.create({
       concept: req.body.concept,
       amount: req.body.amount,
@@ -17,7 +17,7 @@ let movementsController = {
       type: req.body.type,
       state: req.body.state,
       user_id: req.body.user_id,
-      category_id:req.body.category_id
+      category_id: req.body.category_id,
     });
     res.send(req.body);
   },
@@ -31,13 +31,13 @@ let movementsController = {
       where: {
         user_id: { [Op.like]: "%" + req.query.id + "%" },
         state: { [Op.like]: "activo" },
-        
-      },include:[{association: "categories"}]
+      },
+      include: [{ association: "categories" }],
     }).then(function (movements) {
       return res.status(200).json({ movements });
     });
   },
-  
+
   movement: function (req, res) {
     db.Movements.findAll({
       where: {

@@ -33,8 +33,8 @@ function Modifica(props) {
   }, []);
 
   const loadData = async () => {
-    const res = await fetch(urlRecu,{
-        headers: {Authorization: sessionStorage.getItem("token")}
+    const res = await fetch(urlRecu, {
+      headers: { Authorization: sessionStorage.getItem("token") },
     });
     const data = await res.json();
     setMoves(data);
@@ -53,21 +53,22 @@ function Modifica(props) {
     }
   }, [moves]);
 
-  
   //if(mail.current){console.log(mail.current.value);}
   const submit = async (e) => {
     e.preventDefault();
 
-    
-    const res = await Axios.post(url, {
-      concept: concept.current.value,
-      amount: amount.current.value,
-      date: date,
-      type: type,
-      state: state,
-      user_id: id
-      
-    },{headers: {authorization: sessionStorage.getItem("token")},}) 
+    const res = await Axios.post(
+      url,
+      {
+        concept: concept.current.value,
+        amount: amount.current.value,
+        date: date,
+        type: type,
+        state: state,
+        user_id: id,
+      },
+      { headers: { authorization: sessionStorage.getItem("token") } }
+    );
     setIsComplete(true);
   };
 
@@ -82,8 +83,8 @@ function Modifica(props) {
   }, [elimina]);
 
   const loadData2 = async () => {
-    const res = await fetch(urlDelete,{
-        headers: {Authorization: sessionStorage.getItem("token")}
+    const res = await fetch(urlDelete, {
+      headers: { Authorization: sessionStorage.getItem("token") },
     });
     const data = await res.json();
   };
@@ -96,7 +97,11 @@ function Modifica(props) {
         <div className="bodyNota">
           <div className="crear">
             <Link to="/profile">
-              <button type="button" class="btn btn-outline-primary" id="backButton">
+              <button
+                type="button"
+                class="btn btn-outline-primary"
+                id="backButton"
+              >
                 Volver
               </button>
             </Link>

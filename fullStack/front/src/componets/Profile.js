@@ -31,16 +31,16 @@ function Profile() {
   }, []);
 
   const loadData = async () => {
-    
     const res = await fetch(
-      "http://localhost:3001/movements/movementsById?id=" + id,{
-          headers: {Authorization: sessionStorage.getItem("token")}
+      "http://localhost:3001/movements/movementsById?id=" + id,
+      {
+        headers: { Authorization: sessionStorage.getItem("token") },
       }
     );
     const data = await res.json();
     setMoves(data);
   };
-      
+
   useEffect(() => {
     if (moves.movements) {
       let ingresos = moves.movements.filter(
@@ -88,7 +88,6 @@ function Profile() {
   }, [moves]);
 
   function rescue(e) {
-    
     localStorage.setItem("moveId", e.target.id);
     setReenvia(true);
   }
@@ -197,7 +196,9 @@ function Profile() {
                                     <div className="col">${record.amount}</div>
                                     <div className="col">{record.type}</div>
                                     <div className="col">{record.date}</div>
-                                    <div className="col">{(record.categories.category)}</div>
+                                    <div className="col">
+                                      {record.categories.category}
+                                    </div>
                                     <div className="col">
                                       <button
                                         className="buttonEdit"

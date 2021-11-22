@@ -50,7 +50,6 @@ function NewMovement(props) {
     } else {
       let errorTipo = document.querySelector("#errorTipo");
       let errorCat = document.querySelector("#errorCat");
-      
 
       if (type.current.value == "Tipo") {
         errorTipo.innerHTML = "Este campo es requerido";

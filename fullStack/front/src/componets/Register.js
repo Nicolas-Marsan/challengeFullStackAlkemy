@@ -15,7 +15,6 @@ function Register(props) {
 
   const submit = async (e) => {
     e.preventDefault();
-    
 
     if (
       firstName.current.value != "" &&
@@ -23,7 +22,6 @@ function Register(props) {
       mail.current.value != "" &&
       password.current.value != ""
     ) {
-      
       const res = await Axios.post(url, {
         first_name: firstName.current.value,
         last_name: lastName.current.value,
@@ -39,7 +37,6 @@ function Register(props) {
         setError(false);
       }
     } else {
-      
       let errorN = document.querySelector("#errorN");
       let errorA = document.querySelector("#errorA");
       let errorM = document.querySelector("#errorM");
@@ -57,17 +54,10 @@ function Register(props) {
       if (password.current.value == "") {
         errorC.innerHTML = "Este campo es requerido";
       }
-      
     }
-        
-    
-      
-      setIsComplete(true);
-    
+
+    setIsComplete(true);
   };
-
-  
-
 
   return (
     <>
@@ -182,7 +172,7 @@ function Register(props) {
         </div>
       ) : (
         <>
-          {isComplete && validado? (
+          {isComplete && validado ? (
             <Redirect to="/login" />
           ) : (
             <div className="bodyNota">

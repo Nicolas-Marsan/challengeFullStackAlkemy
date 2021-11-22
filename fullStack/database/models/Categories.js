@@ -10,7 +10,7 @@ module.exports = (sequelize, dataTypes) => {
     },
     category: {
       type: dataTypes.STRING,
-    }
+    },
   };
 
   let config = {
@@ -19,13 +19,11 @@ module.exports = (sequelize, dataTypes) => {
   };
   const Categories = sequelize.define(alias, cols, config);
 
-  Categories.associate = function(models){
+  Categories.associate = function (models) {
     Categories.hasMany(models.Movements, {
-
-        as: "movement",
-        foreignKey: "category_id"
-    })
-
+      as: "movement",
+      foreignKey: "category_id",
+    });
   };
 
   return Categories;

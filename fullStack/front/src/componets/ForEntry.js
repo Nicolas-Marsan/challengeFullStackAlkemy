@@ -1,7 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
 
-
 import { Link } from "react-router-dom";
 
 function ForEntry() {
@@ -15,9 +14,10 @@ function ForEntry() {
 
   const loadData = async () => {
     const res = await fetch(
-      "http://localhost:3001/movements/movementsById?id=" + id,{
-        headers: {Authorization: sessionStorage.getItem("token")}
-    }
+      "http://localhost:3001/movements/movementsById?id=" + id,
+      {
+        headers: { Authorization: sessionStorage.getItem("token") },
+      }
     );
     const data = await res.json();
     setMoves(data);
@@ -39,7 +39,11 @@ function ForEntry() {
           <div className="navProfile">
             <div className="crear">
               <Link to="/profile">
-                <button type="button" class="btn btn-outline-primary" id="backButton">
+                <button
+                  type="button"
+                  class="btn btn-outline-primary"
+                  id="backButton"
+                >
                   Volver
                 </button>
               </Link>
@@ -71,7 +75,7 @@ function ForEntry() {
                         <div className="col">${record.amount}</div>
                         <div className="col">{record.type}</div>
                         <div className="col">{record.date}</div>
-                        <div className="col">{(record.categories.category)}</div>
+                        <div className="col">{record.categories.category}</div>
                       </div>
                     </div>
                   );

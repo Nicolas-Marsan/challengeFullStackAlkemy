@@ -40,7 +40,11 @@ function Login(props) {
         <div className="bodyingresar">
           <div className="crear">
             <Link to="/">
-              <button type="button" class="btn btn-outline-primary" id="backButton">
+              <button
+                type="button"
+                class="btn btn-outline-primary"
+                id="backButton"
+              >
                 Volver
               </button>
             </Link>
@@ -122,7 +126,11 @@ function Login(props) {
             <div className="bodyingresar">
               <div className="crear">
                 <Link to="/">
-                  <button type="button" class="btn btn-outline-primary" id="backButton">
+                  <button
+                    type="button"
+                    class="btn btn-outline-primary"
+                    id="backButton"
+                  >
                     Volver
                   </button>
                 </Link>
@@ -169,9 +177,7 @@ function Login(props) {
                       id="password"
                       required
                     ></input>
-                    <div className="mb-3">
-                
-              </div>
+                    <div className="mb-3"></div>
                   </div>
                   <div className="mb-3 form-check">
                     <input

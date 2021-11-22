@@ -28,7 +28,7 @@ module.exports = (sequelize, dataTypes) => {
     },
     category_id: {
       type: dataTypes.INTEGER,
-    }
+    },
   };
 
   let config = {
@@ -37,22 +37,18 @@ module.exports = (sequelize, dataTypes) => {
   };
   const Movements = sequelize.define(alias, cols, config);
 
-  Movements.associate = function(models){
+  Movements.associate = function (models) {
     Movements.belongsTo(models.Usuarios, {
-
-        as: "users",
-        foreignKey: "user_id"
-    })
-
+      as: "users",
+      foreignKey: "user_id",
+    });
   };
 
-  Movements.associate = function(models){
+  Movements.associate = function (models) {
     Movements.belongsTo(models.Categories, {
-
-        as: "categories",
-        foreignKey: "category_id"
-    })
-
+      as: "categories",
+      foreignKey: "category_id",
+    });
   };
 
   return Movements;

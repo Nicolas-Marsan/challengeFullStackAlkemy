@@ -19,7 +19,7 @@ module.exports = (sequelize, dataTypes) => {
     },
     password: {
       type: dataTypes.STRING,
-    }
+    },
   };
 
   let config = {
@@ -28,14 +28,12 @@ module.exports = (sequelize, dataTypes) => {
   };
   const Usuarios = sequelize.define(alias, cols, config);
 
-  Usuarios.associate = function(models){
-    Usuarios.hasMany(models.Movements,{
-               as: "movement",
-               foreignKey: "user_id"
-           })
-       }
-
-
+  Usuarios.associate = function (models) {
+    Usuarios.hasMany(models.Movements, {
+      as: "movement",
+      foreignKey: "user_id",
+    });
+  };
 
   return Usuarios;
 };
